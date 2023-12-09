@@ -5,17 +5,17 @@ from card import Card
 
 class Game():
     
+    #constructor
     def __init__(self, board, screenSize):
 
         self.windowName = 'Jodo da memória'
         self.screenSize = screenSize
         self.board =  board
         self.cardSize = screenSize[0] // (self.board.getSize()[1] + 1), screenSize[1] // (self.board.getSize()[0] + 1)
-        print(self.cardSize)
         self.backImage = 'fundo-carta'
         self.loadImages()
         
-    
+    #rodando o jogo
     def run(self):
         pygame.init()
         pygame.display.set_caption('Jogo da Memória')
@@ -89,6 +89,7 @@ class Game():
             self.images[file.split(".")[0]] = image
             
             
+    #seleciona a imagem a ser mostrada de cada carta
     def getImage(self, card):
         string = None
         if(card.getIsGone()):
@@ -100,10 +101,13 @@ class Game():
         return self.images[string]
     
     
+    #Seleciona a imagem do placar
     def getScoreFile(self, player):
         points = 'images/p' + str(player + 1) + '-' + str(self.playersPoints[player]) + '.png'
         return points
     
+    
+    #verifica se o clique é válido
     def clickInfo(self, position):
         x = 19
         y = 12
@@ -159,6 +163,7 @@ class Game():
             pygame.display.flip()
             
             
+    #Troca a vez do jogador
     def togglePlayersTurn(self):
         if (self.playersTurn == 0):
             self.playersTurn = 1

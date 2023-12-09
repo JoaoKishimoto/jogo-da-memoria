@@ -23,8 +23,6 @@ class Board():
                 i += 1
             self.board.append(row)
             
-    def getSize(self):
-        return self.size
-    
+    #retorna a carta com o respectivo index no grid de cartas
     def getCard(self, index):
         return self.board[index[0]][index[1]]

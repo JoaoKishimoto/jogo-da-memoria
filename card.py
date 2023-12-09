@@ -9,10 +9,10 @@ class Card():
         self.isSelected = False
         self.isGone = False
         
-    def getIsGone(self):
+    def getIsGone(self):                    #verifica se a carta já acharam o par da carta
         return self.isGone  
     
-    def getIsSelected(self):
+    def getIsSelected(self):                #verifica se a carta está selecionada
         return self.isSelected
 
     def getValor(self):                     #função que devolve o valor
