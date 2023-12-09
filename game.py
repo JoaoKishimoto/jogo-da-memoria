@@ -11,6 +11,7 @@ class Game():
         self.screenSize = screenSize
         self.board =  board
         self.cardSize = screenSize[0] // (self.board.getSize()[1] + 1), screenSize[1] // (self.board.getSize()[0] + 1)
+        print(self.cardSize)
         self.backImage = 'fundo-carta'
         self.loadImages()
         
@@ -104,22 +105,22 @@ class Game():
         return points
     
     def clickInfo(self, position):
-        x = 16
+        x = 19
         y = 12
         card = 0
         row = 0 
         while (y <= self.screenSize[1]):
-            x = 16
+            x = 19
             col = 0
             while (x <= self.screenSize[0]):
                 if (position[0] >= x and position[0] <= x + 135):
-                    if(position[1] >= y and position[1] <= y + 132):
+                    if(position[1] >= y and position[1] <= y + 144):
                         answer = [not self.board.getCard((row, col)).getIsSelected(), (row, col)]
                         return answer
-                x += 144
+                x += 135 + 16
                 card += 1
                 col += 1
-            y += 144
+            y += 144 + 12
             row += 1
         return (False, [])
     

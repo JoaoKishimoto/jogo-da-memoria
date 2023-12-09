@@ -5,3 +5,5 @@ Alunos:
 - Dimytri Gueudeville Tambone
 - Júlia Teixeira
 - Daniel Tambon
+
+para abrir o jogo é preciso ter a biblioteca pygame instalada
