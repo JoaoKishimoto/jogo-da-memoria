@@ -26,3 +26,7 @@ class Board():
     #retorna a carta com o respectivo index no grid de cartas
     def getCard(self, index):
         return self.board[index[0]][index[1]]
+    
+    #retorna o tamanho do tabuleiro
+    def getSize(self):
+        return self.size
